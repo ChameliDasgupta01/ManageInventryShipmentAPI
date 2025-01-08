@@ -2,9 +2,9 @@
 
  Overview
 
-	- Manage Inventory Shipment System API  - ManageInventryShipmentAPI
+	- Inventory and Shipment Management System API  - ManageInventryShipmentAPI
 	  	This is developed Using the .NET Core API to perform the backend activity for the CRUD implementation of Inventory and Shipment Management 		System.
-	- Manage Inventory Shipment System UI  - WFManageInventryShipment
+	- Inventory and Shipment Management System UI  - WFManageInventryShipment
 		This is developed using Windows Forms and utilizes an API to perform CRUD (Create, Read, Update, Delete) operations. The application enables 		
 
 Features
