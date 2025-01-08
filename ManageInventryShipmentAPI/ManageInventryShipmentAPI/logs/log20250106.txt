@@ -1,0 +1,307 @@
+2025-01-06 17:27:12.057 +05:30 [INF] Now listening on: https://localhost:7028
+2025-01-06 17:27:12.233 +05:30 [INF] Now listening on: http://localhost:5177
+2025-01-06 17:27:12.333 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-06 17:27:12.668 +05:30 [INF] Hosting environment: Development
+2025-01-06 17:27:12.669 +05:30 [INF] Content root path: C:\ProgramData\InventoryShipmentCode_New6thJan\ManageInventryShipmentAPI\ManageInventryShipmentAPI\
+2025-01-06 17:27:18.014 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/swagger/index.html - -
+2025-01-06 17:27:18.599 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/swagger/index.html - - - 200 - text/html;charset=utf-8 590.9751ms
+2025-01-06 17:27:18.719 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/_framework/aspnetcore-browser-refresh.js - -
+2025-01-06 17:27:18.724 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/_framework/aspnetcore-browser-refresh.js - - - 200 13802 application/javascript;+charset=utf-8 5.4520ms
+2025-01-06 17:27:18.730 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/_vs/browserLink - -
+2025-01-06 17:27:18.952 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 221.6289ms
+2025-01-06 17:27:19.146 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/swagger/v1/swagger.json - -
+2025-01-06 17:27:19.152 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 5.7521ms
+2025-01-06 17:27:34.969 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/api/Product - -
+2025-01-06 17:27:34.976 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI)'
+2025-01-06 17:27:35.000 +05:30 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 17:27:46.359 +05:30 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-01-06 17:27:46.558 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 17:27:50.872 +05:30 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[Price], [p].[ProductDescription], [p].[ProductName], [p].[Quantityinstock]
+FROM [Product] AS [p]
+2025-01-06 17:27:51.017 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ManageInventryShipmentAPI.Data.Product, ManageInventryShipmentAPI.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-06 17:27:51.032 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI) in 16023.8103ms
+2025-01-06 17:27:51.035 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI)'
+2025-01-06 17:27:51.050 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/api/Product - - - 200 - application/json;+charset=utf-8 16081.0971ms
+2025-01-06 17:28:42.280 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7028/api/Product application/json 129
+2025-01-06 17:28:42.288 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 17:28:42.304 +05:30 [INF] Route matched with {action = "Add", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Add(ManageInventryShipmentAPI.Data.Product) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 17:28:42.378 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 17:28:42.664 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Product] ([Price], [ProductDescription], [ProductName], [Quantityinstock])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [ProductId]
+FROM [Product]
+WHERE @@ROWCOUNT = 1 AND [ProductId] = scope_identity();
+2025-01-06 17:28:42.744 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'ManageInventryShipmentAPI.Data.Product'.
+2025-01-06 17:28:42.773 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI) in 467.6347ms
+2025-01-06 17:28:42.775 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 17:28:42.777 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7028/api/Product application/json 129 - 201 - application/json;+charset=utf-8 497.2377ms
+2025-01-06 17:45:55.542 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7028/api/Product application/json 128
+2025-01-06 17:45:55.549 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 17:45:55.551 +05:30 [INF] Route matched with {action = "Add", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Add(ManageInventryShipmentAPI.Data.Product) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 17:45:55.616 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 17:45:55.645 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Product] ([Price], [ProductDescription], [ProductName], [Quantityinstock])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [ProductId]
+FROM [Product]
+WHERE @@ROWCOUNT = 1 AND [ProductId] = scope_identity();
+2025-01-06 17:45:55.650 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'ManageInventryShipmentAPI.Data.Product'.
+2025-01-06 17:45:55.652 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI) in 99.646ms
+2025-01-06 17:45:55.654 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 17:45:55.655 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7028/api/Product application/json 128 - 201 - application/json;+charset=utf-8 113.2266ms
+2025-01-06 17:46:50.060 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/api/Product/1 - -
+2025-01-06 17:46:50.066 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetById (ManageInventryShipmentAPI)'
+2025-01-06 17:46:50.075 +05:30 [INF] Route matched with {action = "GetById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 17:46:50.088 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 17:46:50.337 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductId], [p].[Price], [p].[ProductDescription], [p].[ProductName], [p].[Quantityinstock]
+FROM [Product] AS [p]
+WHERE [p].[ProductId] = @__p_0
+2025-01-06 17:46:50.346 +05:30 [INF] Executing OkObjectResult, writing value of type 'ManageInventryShipmentAPI.Data.Product'.
+2025-01-06 17:46:50.348 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.GetById (ManageInventryShipmentAPI) in 266.9761ms
+2025-01-06 17:46:50.350 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetById (ManageInventryShipmentAPI)'
+2025-01-06 17:46:50.352 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/api/Product/1 - - - 200 - application/json;+charset=utf-8 291.6016ms
+2025-01-06 17:47:35.943 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7028/api/Product/1 application/json 116
+2025-01-06 17:47:35.944 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Update (ManageInventryShipmentAPI)'
+2025-01-06 17:47:35.949 +05:30 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, ManageInventryShipmentAPI.Data.Product) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 17:48:20.027 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-01-06 17:48:20.035 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.Update (ManageInventryShipmentAPI) in 44084.5826ms
+2025-01-06 17:48:20.038 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Update (ManageInventryShipmentAPI)'
+2025-01-06 17:48:20.040 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7028/api/Product/1 application/json 116 - 400 - text/plain;+charset=utf-8 44096.6044ms
+2025-01-06 21:25:51.370 +05:30 [INF] Now listening on: https://localhost:7028
+2025-01-06 21:25:51.465 +05:30 [INF] Now listening on: http://localhost:5177
+2025-01-06 21:25:51.536 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-06 21:25:51.539 +05:30 [INF] Hosting environment: Development
+2025-01-06 21:25:51.552 +05:30 [INF] Content root path: C:\ProgramData\InventoryShipmentCode_New6thJan\ManageInventryShipmentAPI\ManageInventryShipmentAPI\
+2025-01-06 21:25:56.565 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/swagger/index.html - -
+2025-01-06 21:25:57.037 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/swagger/index.html - - - 200 - text/html;charset=utf-8 477.4081ms
+2025-01-06 21:25:57.351 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/_framework/aspnetcore-browser-refresh.js - -
+2025-01-06 21:25:57.357 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/_framework/aspnetcore-browser-refresh.js - - - 200 13802 application/javascript;+charset=utf-8 6.4751ms
+2025-01-06 21:25:57.361 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/_vs/browserLink - -
+2025-01-06 21:25:57.537 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 175.4067ms
+2025-01-06 21:25:57.786 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/swagger/v1/swagger.json - -
+2025-01-06 21:25:57.792 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 5.8986ms
+2025-01-06 21:26:10.919 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/api/Product - -
+2025-01-06 21:26:10.926 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI)'
+2025-01-06 21:26:10.947 +05:30 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 21:26:11.926 +05:30 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-01-06 21:26:12.127 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 21:26:13.425 +05:30 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[Price], [p].[ProductDescription], [p].[ProductName], [p].[Quantityinstock]
+FROM [Product] AS [p]
+2025-01-06 21:26:13.572 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ManageInventryShipmentAPI.Data.Product, ManageInventryShipmentAPI.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-06 21:26:13.589 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI) in 2630.6212ms
+2025-01-06 21:26:13.593 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI)'
+2025-01-06 21:26:13.605 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/api/Product - - - 200 - application/json;+charset=utf-8 2685.7850ms
+2025-01-06 21:27:09.447 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7028/api/InventryShipment/GetAll - -
+2025-01-06 21:27:09.468 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7028/api/InventryShipment/GetAll - - - 404 0 - 21.0873ms
+2025-01-06 21:32:55.052 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7028/api/Product application/json 120
+2025-01-06 21:32:55.063 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 21:32:55.082 +05:30 [INF] Route matched with {action = "Add", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Add(ManageInventryShipmentAPI.Data.Product) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 21:32:55.141 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 21:32:55.453 +05:30 [ERR] Failed executing DbCommand (84ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Product] ([ProductId], [Price], [ProductDescription], [ProductName], [Quantityinstock])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-01-06 21:32:55.598 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'ManageInventryShipmentAPI.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'Product' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:302420b1-16e1-4fea-b596-c4857a839fc0
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'Product' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:302420b1-16e1-4fea-b596-c4857a839fc0
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-01-06 21:32:55.697 +05:30 [ERR] Error adding new product.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'Product' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:302420b1-16e1-4fea-b596-c4857a839fc0
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ManageInventryShipmentAPI.Repository.ProductRepository.AddProductAsync(Product product) in C:\ProgramData\InventoryShipmentCode_New6thJan\ManageInventryShipmentAPI\ManageInventryShipmentAPI.Repositories\ProductRepository.cs:line 51
+2025-01-06 21:32:55.954 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI) in 869.5564ms
+2025-01-06 21:32:55.957 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 21:32:55.963 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, Exception exception, String message, Object[] args)
+   at ManageInventryShipmentAPI.Controllers.ProductController.Add(Product product) in C:\ProgramData\InventoryShipmentCode_New6thJan\ManageInventryShipmentAPI\ManageInventryShipmentAPI\Controllers\ProductController.cs:line 72
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-01-06 21:32:55.986 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7028/api/Product application/json 120 - 500 - text/plain;+charset=utf-8 934.2419ms
+2025-01-06 21:33:28.468 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7028/api/Product application/json 120
+2025-01-06 21:33:28.480 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 21:33:28.491 +05:30 [INF] Route matched with {action = "Add", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Add(ManageInventryShipmentAPI.Data.Product) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 21:33:28.548 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 21:33:28.588 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Product] ([Price], [ProductDescription], [ProductName], [Quantityinstock])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [ProductId]
+FROM [Product]
+WHERE @@ROWCOUNT = 1 AND [ProductId] = scope_identity();
+2025-01-06 21:33:28.662 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'ManageInventryShipmentAPI.Data.Product'.
+2025-01-06 21:33:28.694 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI) in 200.7423ms
+2025-01-06 21:33:28.695 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 21:33:28.697 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7028/api/Product application/json 120 - 201 - application/json;+charset=utf-8 231.0057ms
+2025-01-06 21:34:44.409 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7028/api/Product/1 - -
+2025-01-06 21:34:44.418 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetById (ManageInventryShipmentAPI)'
+2025-01-06 21:34:44.425 +05:30 [INF] Route matched with {action = "GetById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 21:34:44.431 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 21:34:44.679 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductId], [p].[Price], [p].[ProductDescription], [p].[ProductName], [p].[Quantityinstock]
+FROM [Product] AS [p]
+WHERE [p].[ProductId] = @__p_0
+2025-01-06 21:34:44.691 +05:30 [INF] Executing OkObjectResult, writing value of type 'ManageInventryShipmentAPI.Data.Product'.
+2025-01-06 21:34:44.693 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.GetById (ManageInventryShipmentAPI) in 267.4794ms
+2025-01-06 21:34:44.695 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetById (ManageInventryShipmentAPI)'
+2025-01-06 21:34:44.697 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7028/api/Product/1 - - - 200 - application/json;+charset=utf-8 287.2510ms
+2025-01-06 21:37:35.014 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7028/api/Product/1 application/json 120
+2025-01-06 21:37:35.025 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Update (ManageInventryShipmentAPI)'
+2025-01-06 21:37:35.030 +05:30 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, ManageInventryShipmentAPI.Data.Product) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 21:37:35.033 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-01-06 21:37:35.035 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.Update (ManageInventryShipmentAPI) in 3.4971ms
+2025-01-06 21:37:35.036 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Update (ManageInventryShipmentAPI)'
+2025-01-06 21:37:35.037 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7028/api/Product/1 application/json 120 - 400 - text/plain;+charset=utf-8 23.5645ms
+2025-01-06 21:37:52.614 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7028/api/Product/1 application/json 120
+2025-01-06 21:37:52.622 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Update (ManageInventryShipmentAPI)'
+2025-01-06 21:37:52.623 +05:30 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, ManageInventryShipmentAPI.Data.Product) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 21:37:52.629 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 21:37:52.657 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Product] SET [Price] = @p0, [ProductDescription] = @p1, [ProductName] = @p2, [Quantityinstock] = @p3
+WHERE [ProductId] = @p4;
+SELECT @@ROWCOUNT;
+2025-01-06 21:37:52.665 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'ManageInventryShipmentAPI.Data.Product'.
+2025-01-06 21:37:52.667 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.Update (ManageInventryShipmentAPI) in 40.9445ms
+2025-01-06 21:37:52.669 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Update (ManageInventryShipmentAPI)'
+2025-01-06 21:37:52.670 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7028/api/Product/1 application/json 120 - 201 - application/json;+charset=utf-8 55.2731ms
+2025-01-06 21:39:38.460 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7028/api/Product/1 - -
+2025-01-06 21:39:38.466 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Delete (ManageInventryShipmentAPI)'
+2025-01-06 21:39:38.476 +05:30 [INF] Route matched with {action = "Delete", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 21:39:38.488 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 21:39:38.503 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductId], [p].[Price], [p].[ProductDescription], [p].[ProductName], [p].[Quantityinstock]
+FROM [Product] AS [p]
+WHERE [p].[ProductId] = @__p_0
+2025-01-06 21:39:38.542 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Product]
+WHERE [ProductId] = @p0;
+SELECT @@ROWCOUNT;
+2025-01-06 21:39:38.558 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-01-06 21:39:38.560 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.Delete (ManageInventryShipmentAPI) in 76.7573ms
+2025-01-06 21:39:38.561 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Delete (ManageInventryShipmentAPI)'
+2025-01-06 21:39:38.563 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7028/api/Product/1 - - - 204 - - 102.6537ms
+2025-01-06 21:40:52.803 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7028/api/Product - -
+2025-01-06 21:40:52.826 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI)'
+2025-01-06 21:40:52.836 +05:30 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 21:40:52.843 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 21:40:52.914 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[Price], [p].[ProductDescription], [p].[ProductName], [p].[Quantityinstock]
+FROM [Product] AS [p]
+2025-01-06 21:40:52.926 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ManageInventryShipmentAPI.Data.Product, ManageInventryShipmentAPI.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-06 21:40:52.978 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI) in 138.6205ms
+2025-01-06 21:40:53.209 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI)'
+2025-01-06 21:40:53.210 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7028/api/Product - - - 200 - application/json;+charset=utf-8 406.9652ms
+2025-01-06 23:03:29.778 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7028/api/Product application/json;+charset=utf-8 108
+2025-01-06 23:03:29.782 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 23:03:29.783 +05:30 [INF] Route matched with {action = "Add", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Add(ManageInventryShipmentAPI.Data.Product) on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 23:03:29.801 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 23:03:29.850 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Product] ([Price], [ProductDescription], [ProductName], [Quantityinstock])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [ProductId]
+FROM [Product]
+WHERE @@ROWCOUNT = 1 AND [ProductId] = scope_identity();
+2025-01-06 23:03:29.860 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'ManageInventryShipmentAPI.Data.Product'.
+2025-01-06 23:03:29.862 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI) in 77.6119ms
+2025-01-06 23:03:29.864 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.Add (ManageInventryShipmentAPI)'
+2025-01-06 23:03:29.865 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7028/api/Product application/json;+charset=utf-8 108 - 201 - application/json;+charset=utf-8 87.7076ms
+2025-01-06 23:03:47.859 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7028/api/Product - -
+2025-01-06 23:03:47.860 +05:30 [INF] Executing endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI)'
+2025-01-06 23:03:47.861 +05:30 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ManageInventryShipmentAPI.Controllers.ProductController (ManageInventryShipmentAPI).
+2025-01-06 23:03:47.863 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-01-06 23:03:47.868 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[Price], [p].[ProductDescription], [p].[ProductName], [p].[Quantityinstock]
+FROM [Product] AS [p]
+2025-01-06 23:03:47.870 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ManageInventryShipmentAPI.Data.Product, ManageInventryShipmentAPI.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-06 23:03:47.872 +05:30 [INF] Executed action ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI) in 9.5815ms
+2025-01-06 23:03:47.874 +05:30 [INF] Executed endpoint 'ManageInventryShipmentAPI.Controllers.ProductController.GetAll (ManageInventryShipmentAPI)'
+2025-01-06 23:03:47.875 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7028/api/Product - - - 200 - application/json;+charset=utf-8 16.0869ms
